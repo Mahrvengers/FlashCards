@@ -7,4 +7,8 @@ const express = require("express");
 
 const app = express();
 
-app.listen(3000);
+// Heroku setzt den Port nach eigenem Ermessen über eine 
+// Umgebungsvariable PORT... 
+let port = process.env.PORT || 3000;
+
+app.listen(port);
