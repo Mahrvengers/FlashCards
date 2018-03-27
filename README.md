@@ -9,3 +9,11 @@ Bis dann ist das Repo hier damit ich daran basteln kann.
 
 Beste Grüße,
     SQL Server Junge
+
+## Nutzung der Anwendung
+
+Sobald die Anwendung fertig ist, ist sie hier verfügbar: 
+
+https://mahrvengers-flashcards.herokuapp.com/
+
+Aktuell ist sie das zwar auch schon, allerdings ist es mit der App noch nicht weit her... Ich hab sie einfach mal schon bei heroku registriert.
