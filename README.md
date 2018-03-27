@@ -17,3 +17,7 @@ Sobald die Anwendung fertig ist, ist sie hier verfügbar:
 https://mahrvengers-flashcards.herokuapp.com/
 
 Aktuell ist sie das zwar auch schon, allerdings ist es mit der App noch nicht weit her... Ich hab sie einfach mal schon bei heroku registriert.
+
+## Nodemon
+
+Wenn du https://nodemon.io/ installiert hast, dann kannst du während der Entwicklung einfach "nodemon" eingeben. Dann startet nodemon automatisch den Server jedesmal neu, wenn du eine Änderung machst.
