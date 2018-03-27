@@ -11,4 +11,8 @@ const app = express();
 // Umgebungsvariable PORT... 
 let port = process.env.PORT || 3000;
 
+app.get("/", (request, response) => {
+    response.send("I luv mahrvengers.");
+});
+
 app.listen(port);
