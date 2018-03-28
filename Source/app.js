@@ -6,6 +6,7 @@
 const express = require("express");
 
 const app = express();
+app.set("view engine", "pug");
 
 // Heroku setzt den Port nach eigenem Ermessen über eine 
 // Umgebungsvariable PORT... 
