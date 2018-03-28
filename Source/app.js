@@ -18,8 +18,11 @@ app.get("/", (request, response) => {
     response.render("index");
 });
 
-app.get("/hello", (request, response) => {
-    response.send("<h2>Hello world.</h2>");
+app.get("/cards", (request, response) => {
+    response.render("card", {
+        prompt : "Who is buried in Grant's tomb?",
+        hint : "Whose tomb is it?"
+    });
 });
 
 app.listen(port);
