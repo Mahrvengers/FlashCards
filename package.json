@@ -4,11 +4,11 @@
   "description": "A flash card app",
   "main": "Source/app.js",
   "scripts": {
-    "start" : "node Source/app.js",
+    "start": "node Source/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "engines" : {
-    "node" : "9.4.0"
+  "engines": {
+    "node": "9.4.0"
   },
   "repository": {
     "type": "git",
@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/Mahrvengers/FlashCards#readme",
   "dependencies": {
-    "express": "^4.15.2"
+    "express": "^4.15.2",
+    "pug": "^2.0.3"
   }
 }
