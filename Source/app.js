@@ -4,9 +4,11 @@
  */
 
 const express = require("express");
-var path = require('path');
+const path = require('path');
+const bodyParser = require('body-parser');
 
 const app = express();
+app.use(bodyParser.urlencoded( { extended : false } ));
 app.set("view engine", "pug");
 app.set('views', path.join(__dirname, './views'));
 
@@ -23,6 +25,14 @@ app.get("/cards", (request, response) => {
         prompt : "Who is buried in Grant's tomb?",
         hint : "Whose tomb is it?"
     });
+});
+
+app.get("/hello", (request, response) => {
+    response.render("hello", {});
+});
+
+app.post("/hello", (request, response) => {
+    response.render("hello", { name : request.body.username });
 });
 
 app.listen(port);
