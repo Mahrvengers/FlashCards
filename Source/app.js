@@ -48,44 +48,9 @@ app.set('views', path.join(__dirname, './views'));
 // Umgebungsvariable PORT... 
 let port = process.env.PORT || 3000;
 
-app.get("/", (request, response) => {
-    let username = request.cookies.username;
-
-    if (username === undefined) {
-        response.redirect("/hello");
-        return;
-    }
-
-    response.render("index", { name: username });
-});
-
-app.get("/cards", (request, response) => {
-    response.render("card", {
-        prompt: "Who is buried in Grant's tomb?",
-        hint: "Whose tomb is it?"
-    });
-});
-
-app.get("/hello", (request, response) => {
-    const username = request.cookies.username;
-
-    if ( username !== undefined ) {
-        response.redirect("/");
-        return;
-    }
-
-    response.render("hello", { name: request.cookies.username });
-});
-
-app.post("/hello", (request, response) => {
-    response.cookie("username", request.body.username);
-    response.redirect("/");
-});
-
-app.post("/logout", (request, response) => {
-    response.clearCookie("username");
-    response.redirect("/hello");
-});
+// Alle routes von routes/index.js hinzufügen
+app.use(require("./routes/index"));
+app.use("/cards", require("./routes/cards"));
 
 /* Der 404 error handler wird ganz am Ende eingefügt,
    also auch nach den normalen Routes. 
