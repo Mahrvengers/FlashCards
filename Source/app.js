@@ -38,6 +38,13 @@ app.get("/cards", (request, response) => {
 });
 
 app.get("/hello", (request, response) => {
+    const username = request.cookies.username;
+
+    if ( username !== undefined ) {
+        response.redirect("/");
+        return;
+    }
+
     response.render("hello", { name: request.cookies.username });
 });
 
