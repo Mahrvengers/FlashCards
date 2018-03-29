@@ -12,6 +12,17 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
+/* Middleware.. */
+
+app.use((request, response, next) => {
+    console.log(request.originalUrl);
+    next();
+});
+
+
+/* */
+
+
 app.set("view engine", "pug");
 app.set('views', path.join(__dirname, './views'));
 
