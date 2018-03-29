@@ -53,4 +53,9 @@ app.post("/hello", (request, response) => {
     response.redirect("/");
 });
 
+app.post("/logout", (request, response) => {
+    response.clearCookie("username");
+    response.redirect("/hello");
+});
+
 app.listen(port);

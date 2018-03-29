@@ -4,5 +4,8 @@ block content
   section#content
     if name
       h2 Welcome #{name}
+
+      form(method="post", action="/logout")
+        button(type="submit") Log out
     else
       h2 Welcome student!
