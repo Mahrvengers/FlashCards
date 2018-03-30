@@ -6,10 +6,18 @@ const { data } = require("../data/flashcards.json");
 const { cards } = data;
 
 router.get("/:id", (request, response) => {
-    response.render("card", {
-        prompt: cards[request.params.id].question,
-        hint: cards[request.params.id].hint
-    });
+    const { side } = request.query; // check if query contains the side parameter
+    const { id } = request.params;
+
+    const templateData = { };
+
+    templateData.text = cards[id][side];
+    
+    if ( side === "question" ) {
+        templateData.hint = cards[id].hint;
+    }
+
+    response.render("card", templateData);
 });
 
 module.exports = router;
