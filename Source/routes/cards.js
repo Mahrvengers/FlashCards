@@ -5,10 +5,10 @@ const router = express.Router();
 const { data } = require("../data/flashcards.json");
 const { cards } = data;
 
-router.get("/", (request, response) => {
+router.get("/:id", (request, response) => {
     response.render("card", {
-        prompt: "Who is buried in Grant's tomb?",
-        hint: "Whose tomb is it?"
+        prompt: cards[request.params.id].question,
+        hint: cards[request.params.id].hint
     });
 });
 
