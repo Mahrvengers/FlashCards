@@ -23,7 +23,14 @@ router.get("/:id", (request, response) => {
         templateData.sideToShowDisplay = "Show question";
     }
 
+    templateData.baseUrl = request.baseUrl;
+
     response.render("card", templateData);
+});
+
+router.get("/", (request, response) => {
+    const id = Math.floor(Math.random() * cards.length);
+    response.redirect(`${request.baseUrl}/${id}?side=question`);
 });
 
 module.exports = router;
